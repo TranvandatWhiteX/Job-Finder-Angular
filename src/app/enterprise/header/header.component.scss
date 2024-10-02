@@ -1,0 +1,62 @@
+.avatar {
+  height: 46px;
+  width: 46px;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+  margin-right: 8px;
+}
+
+#company-profile {
+  min-width: 256px;
+}
+
+.company-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: #0089d6;
+}
+
+.company-tax {
+  font-size: 13px;
+  color: #7a8b99;
+}
+
+.notification-dropdown {
+  width: 500px;
+  padding: 10px;
+}
+
+.notification-item {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+}
+
+.notification-item i {
+  margin-right: 10px;
+  color: #007ad9;
+}
+
+.container-tabs {
+  width: 100%;
+  .tabs {
+    width: 100%;
+    .tab {
+      color: #007ad9;
+      width: 50%;
+      input {
+        display: none;
+        font-size: 10px;
+        width: 100%;
+      }
+      label {
+        align-items: center;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
