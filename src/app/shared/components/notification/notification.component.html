@@ -1,0 +1,49 @@
+<div class="notification ms-2">
+  <p-button (onClick)="toggle($event)" [style]="{'border-radius': '10px'}">
+    <fa-icon [icon]="faBell" size="lg"></fa-icon>
+  </p-button>
+  <p-overlayPanel [baseZIndex]="2000" #op
+                  [style]="{
+                          'border-radius': '10px',
+                          'box-shadow': '0px 4px 8px rgba(0, 0, 0, 0.1)',
+                          'overflow': 'hidden',
+                          'max-height': '550px'
+                          }">
+    <div class="notification-dropdown p-0">
+      <div class="notification-dropdown-title d-flex justify-content-between">
+        <h4>Thông báo</h4>
+        <button class="btn border-0" style="outline: none">
+          <span class="p-1">Đánh dấu đã đọc</span>
+          <fa-icon [icon]="faCheckDouble" size="xs"></fa-icon>
+        </button>
+      </div>
+      <div class="container-tabs" style="margin-top: 10px">
+        <div class="tabs d-flex">
+          <div class="tab">
+            <input type="radio">
+            <label class="active">Tất cả</label>
+          </div>
+          <div class="tab">
+            <input type="radio">
+            <label>Quan trọng</label>
+          </div>
+        </div>
+      </div>
+      <div class="list-notification overflow-y-scroll" style="max-height: 420px">
+        @for (notification of notifications; track $index) {
+          <div class="notification-item d-flex align-items-center">
+            <div class="d-flex align-items-center w-100">
+              <div class="notification-avatar" style="min-width: 32px; height: 32px;">
+                <img src="../../../../assets/images/default-avatar.jpg" class="img-fluid" alt="Avatar">
+              </div>
+              <div class="content">
+                <p class="m-0" style="font-size: 14px;">{{ notification.message }}</p>
+                <span style="font-size: 13px; color: #a5acb8">1 ngày trước</span>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </p-overlayPanel>
+</div>

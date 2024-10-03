@@ -1,0 +1,43 @@
+.avatar {
+  height: 46px;
+  width: 46px;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+  margin-right: 8px;
+}
+
+#company-profile {
+  min-width: 256px;
+}
+
+.company-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: #0089d6;
+}
+
+.company-tax {
+  font-size: 13px;
+  color: #7a8b99;
+}
+
+.active {
+  border-bottom: 2px solid #0089d6;
+  color: #0089d6;
+  cursor: pointer;
+}
+
+#main-nav {
+  .navbar-nav {
+    .nav-item:hover {
+      background: #f2f8ff;
+    }
+  }
+}
+
+
+
+
+
+
