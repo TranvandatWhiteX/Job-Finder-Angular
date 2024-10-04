@@ -15,6 +15,13 @@
   padding: 10px;
 }
 
+@media (max-width: 767.98px) {
+  .notification-dropdown {
+    width: 320px;
+    padding: 10px;
+  }
+}
+
 .notification-item {
   padding: 10px;
   display: flex;

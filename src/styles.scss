@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
 @layer reset, primeng;
 
 @layer reset {
@@ -6,5 +7,17 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+  }
+  // Override CSS of primeng
+  .p-menubar {
+    padding: 0 !important;
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+
+    .p-menubar-root-list {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
   }
 }

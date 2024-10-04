@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
 import {faSuitcase, faEllipsisVertical, faCheckDouble} from "@fortawesome/free-solid-svg-icons";
 import {faBell} from "@fortawesome/free-regular-svg-icons";
 import {FaIconComponent} from "@fortawesome/angular-fontawesome";
-import {NgOptimizedImage} from "@angular/common";
+import {NgClass, NgOptimizedImage} from "@angular/common";
 import {OverlayPanelModule} from "primeng/overlaypanel";
 import {Button} from "primeng/button";
 import {NotificationComponent} from "../../shared/components/notification/notification.component";
+import {MenubarModule} from "primeng/menubar";
+import {Ripple} from "primeng/ripple";
 
 @Component({
   selector: 'app-enterprise-header',
@@ -15,7 +17,10 @@ import {NotificationComponent} from "../../shared/components/notification/notifi
     NgOptimizedImage,
     OverlayPanelModule,
     Button,
-    NotificationComponent
+    NotificationComponent,
+    MenubarModule,
+    Ripple,
+    NgClass
   ],
   templateUrl: './enterprise-header.component.html',
   styleUrl: './enterprise-header.component.scss'
@@ -23,18 +28,25 @@ import {NotificationComponent} from "../../shared/components/notification/notifi
 export class HeaderComponent {
   faSuitcase = faSuitcase
   faEllipsisVertical = faEllipsisVertical;
-  faBell = faBell;
-  faCheckDouble = faCheckDouble;
+
+  items = [
+    {
+      label: 'Doanh nghiệp'
+    },
+    {
+      label: 'Quản lý'
+    }
+  ]
 
   notifications = [
-    { message: '[Dự án] Task Chỉnh sửa yêu cầu trong Brief 17 - Còn lại thuộc dự án ISS 365 vừa được cập nhật bởi Đặng Ngọc Tụng' },
-    { message: '[Dự án] Task Chỉnh sửa yêu cầu trong Brief 17 - Còn lại thuộc dự án ISS 365 vừa được cập nhật bởi Đặng Ngọc Tụng' },
-    { message: '[Dự án] Task Chỉnh sửa yêu cầu trong Brief 17 - Còn lại thuộc dự án ISS 365 vừa được cập nhật bởi Đặng Ngọc Tụng' },
-    { message: '[Dự án] Task Chỉnh sửa yêu cầu trong Brief 17 - Còn lại thuộc dự án ISS 365 vừa được cập nhật bởi Đặng Ngọc Tụng' },
-    { message: '[Dự án] Task Chỉnh sửa yêu cầu trong Brief 17 - Còn lại thuộc dự án ISS 365 vừa được cập nhật bởi Đặng Ngọc Tụng' },
-    { message: '[Dự án] Task Chỉnh sửa yêu cầu trong Brief 17 - Còn lại thuộc dự án ISS 365 vừa được cập nhật bởi Đặng Ngọc Tụng' },
-    { message: '[Dự án] Task Chỉnh sửa yêu cầu trong Brief 17 - Còn lại thuộc dự án ISS 365 vừa được cập nhật bởi Đặng Ngọc Tụng' },
-    { message: '[Dự án] Task Chỉnh sửa yêu cầu trong Brief 17 - Còn lại thuộc dự án ISS 365 vừa được cập nhật bởi Đặng Ngọc Tụng' },
-    { message: '[Dự án] Task Chỉnh sửa yêu cầu trong Brief 17 - Còn lại thuộc dự án ISS 365 vừa được cập nhật bởi Đặng Ngọc Tụng' }
+    { message: '[Dự án] Task Chỉnh sửa yêu cầu trong Brief 17 - Còn lại thuộc dự án ISS 365 vừa được cập nhật bởi Đặng Ngọc Tụng', isImportant: true },
+    { message: '[Dự án] Task Chỉnh sửa yêu cầu trong Brief 17 - Còn lại thuộc dự án ISS 365 vừa được cập nhật bởi Đặng Ngọc Tụng', isImportant: false },
+    { message: '[Dự án] Task Chỉnh sửa yêu cầu trong Brief 17 - Còn lại thuộc dự án ISS 365 vừa được cập nhật bởi Đặng Ngọc Tụng', isImportant: false },
+    { message: '[Dự án] Task Chỉnh sửa yêu cầu trong Brief 17 - Còn lại thuộc dự án ISS 365 vừa được cập nhật bởi Đặng Ngọc Tụng', isImportant: false },
+    { message: '[Dự án] Task Chỉnh sửa yêu cầu trong Brief 17 - Còn lại thuộc dự án ISS 365 vừa được cập nhật bởi Đặng Ngọc Tụng', isImportant: false },
+    { message: '[Dự án] Task Chỉnh sửa yêu cầu trong Brief 17 - Còn lại thuộc dự án ISS 365 vừa được cập nhật bởi Đặng Ngọc Tụng', isImportant: false },
+    { message: '[Dự án] Task Chỉnh sửa yêu cầu trong Brief 17 - Còn lại thuộc dự án ISS 365 vừa được cập nhật bởi Đặng Ngọc Tụng', isImportant: false },
+    { message: '[Dự án] Task Chỉnh sửa yêu cầu trong Brief 17 - Còn lại thuộc dự án ISS 365 vừa được cập nhật bởi Đặng Ngọc Tụng', isImportant: false },
+    { message: '[Dự án] Task Chỉnh sửa yêu cầu trong Brief 17 - Còn lại thuộc dự án ISS 365 vừa được cập nhật bởi Đặng Ngọc Tụng', isImportant: true }
   ];
 }

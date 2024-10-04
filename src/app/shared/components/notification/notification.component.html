@@ -1,13 +1,11 @@
-<div class="notification ms-2">
-  <p-button (onClick)="toggle($event)" [style]="{'border-radius': '10px'}">
-    <fa-icon [icon]="faBell" size="lg"></fa-icon>
-  </p-button>
+<div class="notification ms-2 flex justify-content-center">
+  <p-button (onClick)="toggle($event)" icon="pi pi-bell" [style]="{'border-radius': '10px'}"></p-button>
   <p-overlayPanel [baseZIndex]="2000" #op
                   [style]="{
                           'border-radius': '10px',
                           'box-shadow': '0px 4px 8px rgba(0, 0, 0, 0.1)',
-                          'overflow': 'hidden',
-                          'max-height': '550px'
+                          'max-height': '550px',
+                          'overflow': 'hidden'
                           }">
     <div class="notification-dropdown p-0">
       <div class="notification-dropdown-title d-flex justify-content-between">
@@ -20,12 +18,12 @@
       <div class="container-tabs" style="margin-top: 10px">
         <div class="tabs d-flex">
           <div class="tab">
-            <input type="radio">
-            <label class="active">Tất cả</label>
+            <label [ngClass]="{'active': isAllNotification}" (click)="toggleNotification('ALL-NOTIFICATION')">Tất
+              cả</label>
           </div>
           <div class="tab">
-            <input type="radio">
-            <label>Quan trọng</label>
+            <label [ngClass]="{'active': !isAllNotification}" (click)="toggleNotification('IMPORTANT-NOTIFICATION')">Quan
+              trọng</label>
           </div>
         </div>
       </div>
