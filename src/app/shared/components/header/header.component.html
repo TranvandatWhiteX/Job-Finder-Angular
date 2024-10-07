@@ -9,7 +9,7 @@
           </p>
         </ng-template>
         <ng-template pTemplate="item" let-item let-root="root">
-          <a pRipple class="flex align-items-center p-menuitem-link text-decoration-none text-black">
+          <a pRipple [routerLink]="item.routerLink" class="flex align-items-center p-menuitem-link text-decoration-none text-black">
             <span class="ml-2">{{ item.label }}</span>
           </a>
         </ng-template>
@@ -19,11 +19,20 @@
               <div class="d-flex w-100 align-items-center justify-content-between">
                 <div class="d-flex align-items-center justify-content-between">
                   <div class="avatar">
-                    <img src="../../../assets/images/default-avatar.jpg" class="img-fluid" alt="Avatar">
+                    @if (user?.avatar) {
+                      <img [src]="user?.avatar" class="img-fluid" alt="Avatar">
+                    } @else {
+                      <img src="../../../../assets/images/default-avatar.jpg" class="img-fluid" alt="Avatar">
+                    }
                   </div>
                   <div class="company-info d-none d-md-block">
-                    <p class="company-name text-black fw-bold m-0">Job Hunt Company</p>
-                    <p class="company-tax m-0">0101245486</p>
+                    @if (user) {
+                      <p class="company-name text-black fw-bold m-0">{{user.name}}</p>
+                      <p class="company-tax m-0">{{user.phoneNumber}}</p>
+                    } @else {
+                      <p class="company-name text-black fw-bold m-0">Job Hunt Company</p>
+                      <p class="company-tax m-0">0101245486</p>
+                    }
                   </div>
                 </div>
                 <div style="width: 32px; height: 32px" class="d-flex justify-content-center align-items-center">
