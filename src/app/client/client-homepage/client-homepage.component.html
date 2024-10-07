@@ -1,7 +1,85 @@
 <section id="enterprise-info"
          style="background-color: #f2f8ff"
-         class="d-flex justify-content-center">
-  <div class="d-flex justify-content-center flex-column enterprise-container" style="min-height: 500px">
-
+         class="d-flex justify-content-center w-100">
+  <div class="d-flex justify-content-center flex-column client-homepage">
+    <div class="client-intro text-center">
+      <h2 class="intro-tile">
+        Tìm việc làm nhanh 24h, việc làm mới nhất trên toàn quốc.
+      </h2>
+      <p class="intro-p">Tiếp cận <strong>40,000+</strong> tin tuyển dụng việc làm mỗi ngày từ hàng nghìn doanh nghiệp
+        uy tín tại Việt Nam</p>
+    </div>
+    <div class="search-container mx-auto position-absolute" style="margin-bottom: 25px; width: 90%;">
+      <form [formGroup]="searchForm" (ngSubmit)="searchJob()">
+        <div class="row">
+          <div class="search-box d-inline-block col-lg-5 col-md-12">
+            <div class="d-flex">
+              <input placeholder="Tìm kiếm công việc..." formControlName="searchText" type="text" class="search-input flex-grow-1">
+              <button type="submit" class="btn search-btn">Tìm kiếm</button>
+            </div>
+          </div>
+          <div class="location-filter col-lg-3 col-md-6 mt-md-3 mt-lg-0">
+            <p-dropdown
+              [options]="countries"
+              formControlName="selectedCity"
+              optionLabel="name"
+              [filter]="true"
+              filterBy="name"
+              [showClear]="true"
+              placeholder="Lựa chọn thành phố">
+              <ng-template pTemplate="selectedItem" let-selectedOption>
+                <div class="flex align-items-center gap-2">
+                  <div>{{ selectedOption.name }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-city pTemplate="item">
+                <div class="flex align-items-center gap-2">
+                  <div>{{ city.name }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+          <div class="job-type-filter col-lg-4 col-md-6 mt-md-3 mt-lg-0">
+            <p-dropdown
+              [options]="jobTypes"
+              formControlName="selectedJobType"
+              optionLabel="name"
+              [filter]="true"
+              filterBy="name"
+              [showClear]="true"
+              placeholder="Lựa chọn ngành nghề">
+              <ng-template pTemplate="selectedItem" let-selectedOption>
+                <div class="flex align-items-center gap-2">
+                  <div>{{ selectedOption.name }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-jobType pTemplate="item">
+                <div class="flex align-items-center gap-2">
+                  <div>{{ jobType.name }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div style="min-height: 500px; background: #fff; margin-top: 45px;">
+      <div class="container-lg client-homepage-content">
+        <div>
+          <h3>Việc làm gợi ý</h3>
+        </div>
+        <div>
+          <h3>Top công ty hàng đầu</h3>
+        </div>
+        <div>
+          <h3>Ngành nghề nổi bật</h3>
+        </div>
+        <div>
+          <h3>
+            Nhà tuyển dụng nổi bật
+          </h3>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

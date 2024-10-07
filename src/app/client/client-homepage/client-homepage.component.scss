@@ -1,0 +1,78 @@
+.client-homepage {
+  width: 100%;
+  .search-container {
+    background: #fff;
+    border-radius: 10px;
+    padding: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    top: 230px;
+    left: calc(10% / 2);
+
+    .search-box {
+      padding: 10px 8px;
+      border: 1px solid #ddd;
+      border-radius: 500px;
+
+      .search-input {
+        border: none;
+        outline: none;
+        margin-left: 10px;
+        padding: 10px;
+      }
+
+      .search-btn {
+        background: #007ad9;
+        color: #fff;
+        border-radius: 500px;
+      }
+    }
+  }
+  .client-homepage-content {
+    margin-top: 110px;
+  }
+  .client-intro {
+    margin: 50px 0;
+  }
+}
+
+::ng-deep .p-dropdown {
+  border-radius: 500px !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+::ng-deep .p-dropdown-label {
+  padding: 10px 0 10px 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+@media (max-width: 767.98px) {
+  .client-homepage {
+    .client-intro {
+      padding: 0 10px;
+      margin: 30px 0;
+    }
+    .search-container {
+      padding: 20px;
+      top: 260px;
+      .location-filter, .job-type-filter {
+        margin-top: 10px;
+        padding: 0;
+      }
+    }
+    .client-homepage-content {
+      margin-top: 170px;
+    }
+  }
+}
+
+@media (min-width: 767.98px) and (max-width: 978px) {
+  .client-homepage {
+    .client-homepage-content {
+      margin-top: 170px;
+    }
+  }
+}
