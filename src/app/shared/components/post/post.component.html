@@ -1,0 +1,24 @@
+<div class="d-flex w-100 post-container">
+  <div class="w-25" style="padding-right: 10px">
+    @if (post.avatar) {
+      <img [src]="post.avatar" class="img-fluid" alt="Avatar">
+    } @else {
+      <img src="../../../../assets/images/default-avatar.jpg" class="img-fluid">
+    }
+  </div>
+  <div class="w-75">
+    <div>
+      <p class="post-name m-0 fw-bold">{{post.name}}</p>
+      <p class="company-name m-0" style="">{{post.companyName}}</p>
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
+      <div>
+        <span style="margin-right: 5px"><p-tag value="Thỏa thuận"/></span>
+        <span><p-tag value="Hà Nội"/></span>
+      </div>
+      <div class="post-like">
+        <span><p-button icon="pi pi-heart" severity="secondary" [outlined]="true" /></span>
+      </div>
+    </div>
+  </div>
+</div>
