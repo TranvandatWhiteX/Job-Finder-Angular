@@ -11,6 +11,24 @@ header nav {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+::ng-deep .p-ripple {
+  background: none;
+  border: none;
+  color: #000;
+}
+
+::ng-deep .p-overlaypanel-content {
+  padding: 10px 0;
+
+  ::ng-deep .account-dropdown .p-button {
+    width: 100%;
+    &:hover {
+      background-color: #ccc;
+    }
+  }
+}
+
+
 #company-profile {
   min-width: 256px;
 }

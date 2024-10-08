@@ -19,8 +19,14 @@ import {ClientHomepageComponent} from "../client-homepage/client-homepage.compon
 })
 export class ClientHomeComponent {
   items: NavigationItem[] = [
-    { label: 'Việc làm', routerLink: '/home' },
-    { label: 'Công ty', routerLink: '/jobs' }
+    {
+      label: 'Việc làm',
+      routerLink: '/home'
+    },
+    {
+      label: 'Công ty',
+      routerLink: '/jobs'
+    }
   ];
 
   notifications = [

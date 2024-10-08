@@ -41,17 +41,17 @@ export class ClientHomepageComponent implements OnInit {
   ngOnInit() {
     this.responsiveOptions = [
       {
-        breakpoint: '1199px',
-        numVisible: 1,
-        numScroll: 1
-      },
-      {
-        breakpoint: '991px',
-        numVisible: 2,
+        breakpoint: '1200px',
+        numVisible: 3,
         numScroll: 1
       },
       {
         breakpoint: '767px',
+        numVisible: 2,
+        numScroll: 1
+      },
+      {
+        breakpoint: '555px',
         numVisible: 1,
         numScroll: 1
       }
