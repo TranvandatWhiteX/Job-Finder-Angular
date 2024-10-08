@@ -1,0 +1,30 @@
+::ng-deep .post-like .p-button {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+img {
+  border-radius: 10px;
+}
+
+::ng-deep .p-tag {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+.post-container {
+  background: #fff;
+  padding: 10px; border-radius: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  .company-name {
+    color: #ccc;
+    font-size: 14px
+  }
+  &:hover {
+    border: 1px solid #007ad9;
+    .post-name, .company-name {
+      color: #007ad9;
+    }
+  }
+}

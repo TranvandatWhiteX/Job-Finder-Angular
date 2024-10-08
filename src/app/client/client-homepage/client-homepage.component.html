@@ -66,18 +66,59 @@
     <div style="min-height: 500px; background: #fff; margin-top: 45px;">
       <div class="container-lg client-homepage-content">
         <div>
-          <h3>Việc làm gợi ý</h3>
+          <h3 style="color: #007ad9">Việc làm gợi ý</h3>
+          <div class="row">
+            @for (post of posts; track post) {
+              <div class="col-lg-4 col-md-6" style="margin: 8px 0">
+                <app-post [post]="post"></app-post>
+              </div>
+            }
+          </div>
+        </div>
+        <div style="margin-top: 15px">
+          <h3 style="color: #007ad9">Top công ty hàng đầu</h3>
+          <div class="company-carousel">
+            <p-carousel
+              [value]="companies"
+              [numVisible]="4"
+              [numScroll]="3"
+              [circular]="false"
+              [responsiveOptions]="responsiveOptions">
+              <ng-template let-company pTemplate="item">
+                <div class="m-2 p-2 company-card d-flex flex-column justify-content-center align-items-center">
+                  @if (company.avatar) {
+                    <img [src]="company?.avatar" class="img-fluid" alt="Avatar">
+                  } @else {
+                    <img src="../../../assets/images/default-avatar.jpg" class="img-fluid">
+                  }
+                  <p class="fw-bold m-0 company-carousel-name" style="padding-top: 6px">{{company.name}}</p>
+                </div>
+              </ng-template>
+            </p-carousel>
+          </div>
         </div>
         <div>
-          <h3>Top công ty hàng đầu</h3>
-        </div>
-        <div>
-          <h3>Ngành nghề nổi bật</h3>
-        </div>
-        <div>
-          <h3>
-            Nhà tuyển dụng nổi bật
-          </h3>
+          <h3 style="color: #007ad9">Ngành nghề nổi bật</h3>
+          <div class="top-job-types-carousel">
+            <p-carousel
+              [value]="topJobTypes"
+              [numVisible]="4"
+              [numScroll]="3"
+              [circular]="false"
+              [responsiveOptions]="responsiveOptions">
+              <ng-template let-jobType pTemplate="item">
+                <div class="m-2 p-2 job-type-card d-flex flex-column justify-content-center align-items-center">
+                  @if (jobType.avatar) {
+                    <img [src]="jobType?.avatar" class="img-fluid" alt="Avatar">
+                  } @else {
+                    <img src="../../../assets/images/default-avatar.jpg" class="img-fluid" alt="Image">
+                  }
+                  <p class="fw-bold m-0 job-type-name" style="padding-top: 6px">{{jobType.name}}</p>
+                  <p style="color: #007ad9; font-size: 14px">{{jobType.amount | number:'1.0'}} <span>việc làm</span></p>
+                </div>
+              </ng-template>
+            </p-carousel>
+          </div>
         </div>
       </div>
     </div>

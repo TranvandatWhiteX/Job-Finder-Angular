@@ -35,6 +35,36 @@
   }
 }
 
+.carousel-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fff;
+  margin: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  img {
+    width: 180px;
+    border-radius: 10px;
+  }
+
+  &:hover {
+    border: 1px solid #007ad9;
+  }
+}
+
+.company-card:hover .company-carousel-name,
+.job-type-card:hover .job-type-name {
+  color: #007ad9;
+}
+
+.company-carousel .company-card {
+  @extend .carousel-card;
+}
+
+.top-job-types-carousel .job-type-card {
+  @extend .carousel-card;
+}
+
 ::ng-deep .p-dropdown {
   border-radius: 500px !important;
   width: 100% !important;
@@ -47,6 +77,10 @@
   align-items: center;
   height: 100%;
   text-align: center;
+}
+
+::ng-deep .p-carousel-indicators {
+  margin: 0;
 }
 
 @media (max-width: 767.98px) {
