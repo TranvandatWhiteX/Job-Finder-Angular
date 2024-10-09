@@ -4,6 +4,7 @@ import {FooterComponent} from "../../shared/components/footer/footer.component";
 import {HeaderComponent} from "../../shared/components/header/header.component";
 import {NavigationItem} from "../../shared/models/navigation-item.model";
 import {ClientHomepageComponent} from "../client-homepage/client-homepage.component";
+import {RouterLink, RouterModule, RouterOutlet} from "@angular/router";
 
 @Component({
   selector: 'app-client-home',
@@ -12,7 +13,9 @@ import {ClientHomepageComponent} from "../client-homepage/client-homepage.compon
     EnterpriseInfoComponent,
     FooterComponent,
     HeaderComponent,
-    ClientHomepageComponent
+    ClientHomepageComponent,
+    RouterOutlet,
+    RouterLink
   ],
   templateUrl: './client-home.component.html',
   styleUrl: './client-home.component.scss'
@@ -21,11 +24,11 @@ export class ClientHomeComponent {
   items: NavigationItem[] = [
     {
       label: 'Việc làm',
-      routerLink: '/home'
+      routerLink: '/jobs'
     },
     {
       label: 'Công ty',
-      routerLink: '/jobs'
+      routerLink: '/companies'
     }
   ];
 
